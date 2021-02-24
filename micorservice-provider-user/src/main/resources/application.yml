@@ -12,6 +12,8 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+  application:
+    name: microservice-provider-user  #  指定注册到Eureka的应用的名字，建议全部小写
 logging:
   level:
     root: INFO
@@ -19,3 +21,11 @@ logging:
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
     com.huaxin: DEBUG
+#eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://diaoby:diaoby@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true  # 当鼠标悬浮在服务上，左下角的名称显示IP，或者点击进去之后打开的新页面以ip的形式显示
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
