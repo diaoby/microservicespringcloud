@@ -23,7 +23,12 @@ public class MovieController {
 
     @Autowired
     private UserFeignClient userClient;
-
+    /**
+     *
+     * @param user
+     * @return
+     * 	调用会出错
+     */
     @GetMapping("/movie/getA")
     public User findUser(User user) {
         log.info("get进入服务消费者 MovieController.findUser");
