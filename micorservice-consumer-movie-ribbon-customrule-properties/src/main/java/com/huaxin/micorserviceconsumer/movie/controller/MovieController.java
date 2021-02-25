@@ -32,8 +32,12 @@ public class MovieController {
     @Value("${user.userServicePath}")
     private String userServicePath;
 
+    @Value("${user.userServicePath2}")
+    private String userServicePath2;
+
     @GetMapping("/movie/{id}")
     public User findById(@PathVariable Long id) {
+        this.restTemplate.getForObject(this.userServicePath2 +"/user/" + id, User.class);
         return this.restTemplate.getForObject(this.userServicePath +"/user/" + id, User.class);
     }
 

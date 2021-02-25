@@ -2,6 +2,7 @@ server:
   port: 7902
 user:
   userServicePath: http://microservice-provider-user/
+  userServicePath2: http://microservice-provider-user2/
 spring:
   application:
     name: micorservice-consumer-movie-ribbon-customrule-properties
@@ -17,3 +18,6 @@ eureka:
 microservice-provider-user:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+microservice-provider-user2:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule

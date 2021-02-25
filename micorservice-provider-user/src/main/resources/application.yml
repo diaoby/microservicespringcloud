@@ -7,7 +7,7 @@ spring:
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
-    name: microservice-provider-user  #  指定注册到Eureka的应用的名字，建议全部小写
+    name: microservice-provider-user #  指定注册到Eureka的应用的名字，建议全部小写
 logging:
   level:
     root: INFO
