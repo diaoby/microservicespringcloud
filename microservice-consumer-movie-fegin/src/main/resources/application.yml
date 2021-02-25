@@ -1,0 +1,20 @@
+server:
+  port: 7904
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.huaxin: DEBUG
+spring:
+  application:
+    name: micorservice-consumer-movie-feign
+#eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://diaoby:diaoby@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
